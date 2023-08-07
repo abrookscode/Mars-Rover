@@ -1,6 +1,8 @@
-﻿namespace Rover
+﻿using Rover.Interfaces;
+
+namespace Rover.Components
 {
-    internal class RemoteController : Rotator, IMoveable
+    public class RemoteController : Rotator, IMoveable
     {
         public int PositionX { get; set; }
         public int PositionY { get; set; }
@@ -9,7 +11,6 @@
         {
             PositionX = positionX;
             PositionY = positionY;
-            Heading = heading;
         }
 
         public void Move()

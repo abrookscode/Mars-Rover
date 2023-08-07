@@ -1,4 +1,6 @@
-﻿namespace Rover
+﻿using Rover.Interfaces;
+
+namespace Rover.Components
 {
     public abstract class Rotator : Compass, IRotateable
     {

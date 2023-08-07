@@ -1,4 +1,4 @@
-﻿namespace Rover
+﻿namespace Rover.Interfaces
 {
     interface IRotateable
     {

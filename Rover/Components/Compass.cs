@@ -1,22 +1,22 @@
-﻿namespace Rover
+﻿namespace Rover.Components
 {
     public abstract class Compass
     {
         private int _degree;
         private string _heading = string.Empty;
-        protected string Heading
+        public string Heading
         {
             get
             {
                 return _heading;
             }
-            set
+            private set
             {
                 _heading = value;
                 _degree = _cardinalReverse[value];
             }
         }
-        protected int Degree
+        public int Degree
         {
             get
             {
@@ -52,7 +52,7 @@
 
         protected int Calculate(int degree)
         {
-            return degree < 0 ? 360 + (degree % 360) : degree % 360;
+            return degree < 0 ? 360 + degree % 360 : degree % 360;
         }
     }
 }

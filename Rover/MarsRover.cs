@@ -1,8 +1,11 @@
-﻿namespace Rover
+﻿using Rover.Components;
+
+namespace Rover
 {
-    internal class MarsRover : Vehicle
+    public class MarsRover : Vehicle
     {
         Planet Planet { get; set; }
+
         public MarsRover(int positionX, int positionY, string heading, Planet planet) : base(positionX, positionY, heading)
         {
             Planet = planet;
@@ -30,7 +33,7 @@
             }
         }
 
-        private new void Move()
+        public new void Move()
         {
             if (Planet.WillCollide(PositionX, PositionY)[Heading] == false)
             {
@@ -40,7 +43,11 @@
 
         public void Report()
         {
-            Console.WriteLine($"{PositionX} {PositionY} {Heading}");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\r\nThe rover is now located at:");
+            Console.WriteLine($"{PositionX} {PositionY} {Heading}\r\n");
+            Console.ResetColor();
         }
     }
 }
